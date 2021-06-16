@@ -8,9 +8,12 @@ class Book(db.Model):
     publisher = db.Column(db.String)
 
     def __repr__(self):
-        return f'<Books: {self.title} | {self.author} | {self.publisher}>'
+        return f'<Books: {self.book_id} | {self.title} | {self.publisher}>'
 
 class Author(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String)
     book_id = db.Column(db.String)
+
+    def __repr__(self):
+        return f'<Author: [{self.book_id}] {self.name}>'
